@@ -18,7 +18,8 @@ samp_word <- sample(hashtag, 1)
 
 ## Status Message
 
-status_details <- paste0(Sys.Date(),": ", "\n", "\n",
+status_details <- paste0(Sys.Date(),", ",format(Sys.time(), "%X"), " : \n", "\n",
+                         "▶️ Top 3 : \n",
                          "1. ",    a[1,3]," (", a[1,2], ") \n", 
                          "2. ",    a[2,3]," (", a[2,2], ")\n",
                          "3. ",    a[3,3]," (", a[3,2], ")\n", "\n",

@@ -30,7 +30,7 @@ library(rtweet)
 
 ## Create Twitter token
 yutub_token <- rtweet::create_token(
-  app = "Muzik_Youtube",
+  app = Sys.getenv("TWITTER_APP_NAME"),
   consumer_key = Sys.getenv("TWITTER_API_KEY"), 
   consumer_secret = Sys.getenv("API_KEY_SECRET"),
   access_token = Sys.getenv("TWITTER_ACCESS_TOKEN"),

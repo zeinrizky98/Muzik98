@@ -12,19 +12,19 @@ a <- tail(a,3)
 
 # Hashtag
 hashtag <- c("Music", "Youtube", "Chart", "Hits", "Trend", "24Hours", "Videos",
-             "github","rvest","rtweet", "bot", "opensource", "ggplot2", "dplyr", "tidyr")
+             "github","rvest","rtweet", "bot", "opensource", "dplyr", "tidyr", "YoutubeChart")
 
 samp_word <- sample(hashtag, 1)
 
 ## Status Message
 
-status_details <- paste0(format(Sys.Date(),"%d %B %Y", tz="Asia/Bangkok"),", ",format(Sys.time(), "%X", tz="Asia/Bangkok"), " : \n", "\n",
-                         "🔼3 : \n",
+status_details <- paste0(format(Sys.Date(),"%d %B %Y"),", ",format(Sys.time(), "%X"), " : \n", "\n",
+                         "▶️ 3 : \n",
                          "1. ",    a[1,3]," (", a[1,2], ") \n", 
                          "2. ",    a[2,3]," (", a[2,2], ")\n",
                          "3. ",    a[3,3]," (", a[3,2], ")\n", "\n",
                          a$link[1], "\n",
-                         "#",samp_word, " #YoutubeChart", "\n")
+                         "#",samp_word, "\n")
 
 # Publish to Twitter
 library(rtweet)

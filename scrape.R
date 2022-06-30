@@ -8,7 +8,7 @@ data3 <- urlPT %>% read_html() %>% html_table()
 df <- data3[[1]]
 names(df)[1] <- "Pos"
 names(df)[2] <- "Stat"
-df <- head(df,3)
+df <- head(df,2)
 
 #Link youtube no 1
 pg <- read_html(urlPT)

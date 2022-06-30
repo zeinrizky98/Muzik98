@@ -8,22 +8,22 @@ twitter_collection <- mongo(collection = Sys.getenv("MONGO_COLLECTION_NAME"), # 
                             verbose = TRUE)
 
 a <- twitter_collection$find()
-a <- tail(a,3)
+a <- tail(a,2)
 
 # Hashtag
 hashtag <- c("Music", "Youtube", "Chart", "Hits", "Trend", "24Hours", "Videos",
-             "github","rvest","rtweet", "bot", "opensource", "dplyr", "tidyr", "YoutubeChart")
+             "github","rvest","rtweet", "bot", "opensource", "dplyr", "tidyr")
 
 samp_word <- sample(hashtag, 1)
 
 ## Status Message
 
-status_details <- paste0("▶️",format(Sys.Date(),"%d %B %Y", tz = "Asia/Bangkok"),", ",format(Sys.time(), "%X", tz = "Asia/Bangkok"), " : \n", "\n",
+status_details <- paste0(format(Sys.Date(),"%d %B %Y", tz = "Asia/Bangkok"),", ",format(Sys.time(), "%X", tz = "Asia/Bangkok"), " : \n", "\n",
+                         "▶️ Top 2: \n",
                          "1. ",    a[1,3]," (", a[1,2], ") \n", 
-                         "2. ",    a[2,3]," (", a[2,2], ")\n",
-                         "3. ",    a[3,3]," (", a[3,2], ")\n", "\n",
+                         "2. ",    a[2,3]," (", a[2,2], ")\n", "\n",
                          a$link[1], "\n",
-                         "#",samp_word, "\n")
+                         "#",samp_word, "#YoutubeChart")
 
 # Publish to Twitter
 library(rtweet)

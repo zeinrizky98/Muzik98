@@ -22,7 +22,7 @@ status_details <- paste0(format(Sys.Date(),"%d %B %Y", tz = "Asia/Bangkok"),", "
                          "1. ",    a[1,3]," (", a[1,2], ") \n", 
                          "2. ",    a[2,3]," (", a[2,2], ")\n", "\n",
                          a$link[1], "\n",
-                         "#",samp_word, "#YoutubeChart")
+                         "#",samp_word, " #YoutubeChart")
 
 # Publish to Twitter
 library(rtweet)
